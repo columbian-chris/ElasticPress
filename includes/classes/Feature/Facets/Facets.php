@@ -41,7 +41,7 @@ class Facets extends Feature {
 		$this->title = esc_html__( 'Filters', 'elasticpress' );
 
 		$this->summary = '<p>' .
-			wp_is_block_theme()
+			( wp_is_block_theme()
 				? sprintf(
 					/* translators: Site Editor URL */
 					__( 'Adds <a href="%s">filter blocks</a> that administrators can add to the website’s templates and template parts, so that visitors can filter applicable content and search results by one or more taxonomy terms, metafields, and date ranges.', 'elasticpress' ),
@@ -52,7 +52,7 @@ class Facets extends Feature {
 					__( 'Adds <a href="%s">filter widgets</a> that administrators can add to the website’s sidebars (widgetized areas), so that visitors can filter applicable content and search results by one or more taxonomy terms, metafields, and date ranges.', 'elasticpress' ),
 					esc_url( admin_url( 'widgets.php' ) )
 				)
-			. '</p>';
+			) . '</p>';
 
 		$this->docs_url = __( 'https://www.elasticpress.io/documentation/article/configuring-elasticpress-via-the-plugin-dashboard/#filters', 'elasticpress' );
 

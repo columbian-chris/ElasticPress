@@ -898,10 +898,6 @@ class Search extends Feature {
 				'label'   => __( 'Highlight tag', 'elasticpress' ),
 				'options' => [
 					[
-						'label' => __( 'None', 'elasticpress' ),
-						'value' => '',
-					],
-					[
 						'label' => 'mark',
 						'value' => 'mark',
 					],

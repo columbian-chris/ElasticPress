@@ -597,7 +597,7 @@ class Post extends Indexable {
 	/**
 	 * Prepare date terms to send to ES.
 	 *
-	 * @param string $date_to_prepare Post date
+	 * @param null|string $date_to_prepare Post date
 	 * @since 0.1.4
 	 * @return array
 	 */
@@ -618,7 +618,7 @@ class Post extends Indexable {
 
 		// Combine all the date term formats and perform one single call to date_i18n() for performance.
 		$date_format    = implode( '||', array_values( $terms_to_prepare ) );
-		$combined_dates = explode( '||', date_i18n( $date_format, strtotime( $date_to_prepare ) ) );
+		$combined_dates = explode( '||', date_i18n( $date_format, strtotime( (string) $date_to_prepare ) ) );
 
 		// Then split up the results for individual indexing.
 		$date_terms = [];
